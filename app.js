@@ -1,4 +1,6 @@
-var express       = require("express"),
+/* jshint esversion: 6 */
+
+let express       = require("express"),
     mongoose      = require("mongoose"),
     bodyParser    = require("body-parser"),
     flash         = require("connect-flash"),
@@ -6,14 +8,14 @@ var express       = require("express"),
     localStrategy = require("passport-local").Strategy;
 
 //REQUIRE MODELS
-var Student = require("./models/student");
+let Student = require("./models/student");
 
 // CONNECT DATABASE
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/studefolio");
 
 // CONFIGURE APP AND MIDDLEWARE
-var app = express();
+let app = express();
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:false}));

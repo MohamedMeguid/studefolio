@@ -14,14 +14,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <% if(!currentStudent) { %>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Sign Up</a></li>
+          <li><a href="/">Become a Client</a></li>
+          <li><a href="/students/login">Login</a></li>
+          <li><a href="/students/register">Sign Up</a></li>
         <% } else { %>
+          <li><a href="/students/" + currentStudent.username><%= currentStudent.username %></a></li>
           <li><a href="/logout">Logout</a></li>
         <% } %>
       </ul>
