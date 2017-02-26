@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 
 var portfolioSchema = new mongoose.Schema({
-  title: String,
+  name: String,
   image: String,
   student:{
       type: mongoose.Schema.Types.ObjectId,

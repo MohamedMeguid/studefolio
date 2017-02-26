@@ -45,6 +45,7 @@ app.use(function(req, res, next){
 // ROUTES
 app.use(require("./routes/index"));
 app.use(require("./routes/students"));
+app.use(require("./routes/portfolio"));
 
 
 // SERVER LISTENING
