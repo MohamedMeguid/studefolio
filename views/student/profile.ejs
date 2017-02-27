@@ -8,8 +8,9 @@
   <div class="row">
     <% if(!portfolio) { %>
       <p>
-        You don't have Portfolio, create one now
+        You don't have a Portfolio yet
       </p>
+      <a class="btn btn-success" href="/students/<%= student.username %>/portfolio/new">create one now</a>
     <% } else { %>
       <p>
         You have a portfolio

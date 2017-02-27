@@ -9,6 +9,11 @@ let express       = require("express"),
 
 //REQUIRE MODELS
 let Student = require("./models/student");
+let Work = require("./models/work");
+let Portfolio = require("./models/portfolio");
+
+//REQUIRE CLEARDB 
+let clearDB = require("./clearDB");
 
 // CONNECT DATABASE
 mongoose.Promise = global.Promise;
@@ -21,6 +26,8 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname + "/public"));
 app.use(flash());
+
+clearDB();
 
 app.use(require("express-session")({
   secret: "Ana msh fahem eh da f3ln bs eshta",

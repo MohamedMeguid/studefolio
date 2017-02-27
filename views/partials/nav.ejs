@@ -22,7 +22,7 @@
           <li><a href="/students/login">Login</a></li>
           <li><a href="/students/register">Sign Up</a></li>
         <% } else { %>
-          <li><a href="/students/" + currentStudent.username><%= currentStudent.username %></a></li>
+          <li><a href="/students/<%= currentStudent.username %>"><%= currentStudent.username %></a></li>
           <li><a href="/logout">Logout</a></li>
         <% } %>
       </ul>

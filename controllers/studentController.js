@@ -45,8 +45,6 @@ let studentController = {
     Portfolio.findOne({student: req.user._id}, function(err, portfolio){
       if(err){
         console.log(err.message);
-        req.flash("error", "There was an error while retrieving your portfolio :/");
-        res.render("student/profile", {student: req.user});
       } else {
         res.render("student/profile", {student: req.user, portfolio: portfolio});
       }
