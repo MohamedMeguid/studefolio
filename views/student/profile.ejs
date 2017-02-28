@@ -1,21 +1,50 @@
 <% include ../partials/header %>
 <% include ../partials/nav %>
 
-<div class="container">
-  <div class="row">
-    <h1 class="text-center">Welcome to your profile, <strong><%= student.username %></strong></h1>
-  </div>
-  <div class="row">
+   
     <% if(!portfolio) { %>
-      <p>
-        You don't have a Portfolio yet
-      </p>
-      <a class="btn btn-success" href="/students/<%= student.username %>/portfolio/new">create one now</a>
+     
+      <div class="container">
+        <div class="row">
+          <h1 class="text-center">Welcome to your profile, <strong><%= student.username %></strong></h1>
+          <p class="text-center">
+            You seem you don't have a Portfolio yet
+          </p>
+          <a class="btn btn-success" href="/students/<%= student.username %>/portfolio/new">create one now</a>
+        </div>
+      </div>
     <% } else { %>
-      <p>
-        You have a portfolio
-      </p>
+
+      <div class="jumbotron">
+        
+        <div class="container">
+          
+          <div class="row">
+            
+            <div class="profile-pic col-lg-2">
+              <img src="/uploads/<%= portfolio.image %>" alt="<%= student.username %> profile picture" class="img-responsive img-thumbnail">
+            </div>
+            
+            <div class="col-lg-10">
+              <h2><%= portfolio.name %></h2>
+              <h5>@<%= student.username %></h5>
+            </div>
+          
+          </div>
+       
+        </div>
+     
+      </div>
+
     <% } %>
 
-  </div>
-</div>
+
+<style>
+
+a {
+  text-align: center;
+}
+
+</style>
+
+<% include ../partials/footer %>

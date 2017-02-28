@@ -1,0 +1,15 @@
+.navbar {
+  margin-bottom: 0 !important;
+  background-color: white;
+  border-top: 3px solid #01a957;
+  border-radius: 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #01a957 !important;
+}
+
+.alert {
+  margin-top: 20px;
+}

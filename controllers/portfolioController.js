@@ -20,7 +20,7 @@ let portfolioController = {
             } else {
                 Portfolio.create({
                     name: req.body.name,
-                    image: req.file.path,
+                    image: req.file.filename,
                     student: req.user._id
                 }, function(err, portfolio){
                     if(err){
@@ -28,9 +28,7 @@ let portfolioController = {
                     } else {
                         portfolio.works.push(work);
                         portfolio.save();
-                        console.log("Student " + req.user.username + " has created portfolio of id: " + portfolio._id);
-                        console.log("=========================");
-                        console.log(portfolio.works);
+                        req.flash("success", "Your portfolio was successfully created");
                         res.redirect("/students/<%= req.user.username %>")
                     }
                 });
