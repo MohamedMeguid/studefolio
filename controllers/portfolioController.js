@@ -20,12 +20,14 @@ let portfolioController = {
             } else {
                 Portfolio.create({
                     name: req.body.name,
-                    image: req.file.filename,
                     student: req.user._id
                 }, function(err, portfolio){
                     if(err){
                         console.log(err.message);
                     } else {
+                        if(req.file){
+                            portfolio.update({image: req.file.filename});
+                        }
                         portfolio.works.push(work);
                         portfolio.save();
                         req.flash("success", "Your portfolio was successfully created");

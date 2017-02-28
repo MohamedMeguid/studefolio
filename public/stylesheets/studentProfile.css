@@ -3,6 +3,12 @@ a {
   text-align: center;
 }
 
+.profile-head {
+  margin-top: 3em;
+}
+
+
+
 .number-works {
   font-size: 12px !important;
 }
@@ -19,4 +25,13 @@ a {
 
 .desc {
   margin-top: 10px;
+}
+
+#create-button {
+  margin-top: 15px;
+}
+
+#no-profile-par {
+  margin-top: 15px;
+  font-size: 18px;
 }

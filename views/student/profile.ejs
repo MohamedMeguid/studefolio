@@ -6,12 +6,10 @@
     <% if(!portfolio) { %>
      
       <div class="container">
-        <div class="row">
-          <h1 class="text-center">Welcome to your profile, <strong><%= student.username %></strong></h1>
-          <p class="text-center">
-            You seem like you don't have a Portfolio yet
-          </p>
-          <a class="btn btn-success" href="/students/<%= student.username %>/portfolio/new">create one now</a>
+        <div class="row text-center profile-head">
+          <h1>Welcome to your profile, <strong><%= student.username %></strong></h1>
+          <p id="no-profile-par">You seem like you don't have a Portfolio yet</p>
+          <a id="create-button" class="btn btn-success btn-lg" href="/students/<%= student.username %>/portfolio/new">Create one now</a>
         </div>
       </div>
 
@@ -20,9 +18,13 @@
           <div class="jumbotron">
           <div class="container">
 
-            <div class="row profile-head">
+            <div class="row">
               <div class="profile-pic col-lg-2">
+              <% if(portfolio.image) { %>
                 <img src="/uploads/<%= portfolio.image %>" alt="<%= student.username %> profile picture" class="img-responsive img-thumbnail">
+              <% } else { %>
+                <img src="/uploads/default.png" alt="<%= student.username %> profile picture" class="img-responsive img-thumbnail">
+              <% } %>
               </div>
               <div class="col-lg-10">
                 <h2><%= portfolio.name %></h2>
