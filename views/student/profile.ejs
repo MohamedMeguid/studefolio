@@ -1,4 +1,5 @@
 <% include ../partials/header %>
+  <link rel="stylesheet" href="/stylesheets/studentProfile.css">
 <% include ../partials/nav %>
 
    
@@ -31,6 +32,7 @@
                 <% } else { %>
                   <p class="number-works"><%= portfolio.works.length %> pieces of your work are already here</p>
                 <% } %>
+                <a href="#" class="btn btn-success">Add more work</a>
               </div>
             </div>
 
@@ -59,33 +61,5 @@
           </div>
      
     <% } %>
-
-
-<style>
-
-a {
-  display: block;
-  text-align: center;
-}
-
-.number-works {
-  font-size: 12px !important;
-}
-
-.works {
-  margin-top: 2.5em;
-}
-
-.single-work {
-  margin-right: 5px;
-  margin-left: 5px;
-  word-wrap: break-word;
-}
-
-.desc {
-  margin-top: 10px;
-}
-
-</style>
 
 <% include ../partials/footer %>

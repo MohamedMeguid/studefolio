@@ -1,0 +1,22 @@
+a {
+  display: block;
+  text-align: center;
+}
+
+.number-works {
+  font-size: 12px !important;
+}
+
+.works {
+  margin-top: 2.5em;
+}
+
+.single-work {
+  margin-right: 5px;
+  margin-left: 5px;
+  word-wrap: break-word;
+}
+
+.desc {
+  margin-top: 10px;
+}
