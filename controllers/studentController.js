@@ -42,7 +42,7 @@ let studentController = {
 
   // STUDENT PROFILE
   getStudentProfile:function(req, res){
-    Portfolio.findOne({student: req.user._id}, function(err, portfolio){
+    Portfolio.findOne({student: req.user._id}).populate("works").exec(function(err, portfolio){
       if(err){
         console.log(err.message);
       } else {
