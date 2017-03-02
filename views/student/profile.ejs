@@ -50,12 +50,18 @@
             <div class="row works">
               <% portfolio.works.forEach(function(work){ %>
                 <div class="col-md-3 well single-work">
+                  <small class="date"><%= work.created_at.toDateString() %></small>
                   <a href="<%= work.link %>" class="text-center">
                     <%= work.link %>
                   </a>
+                  <hr>
                   <p class="text-center desc">
                     <%= work.details %>
                   </p>
+                  <div class="text-center">
+                    <a class="btn btn-primary btn-xs" href="/students/<%= student.username %>/portfolio/<%= work._id %>/edit">Edit</a>
+                    <a class="btn btn-danger btn-xs" href="/students/<%= student.username %>/portfolio/<%= work._id %>">Delete</a>
+                  </div>
                 </div>
                 <% }) %>
             </div>

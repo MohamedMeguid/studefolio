@@ -7,7 +7,12 @@ a {
   margin-top: 3em;
 }
 
-
+.date {
+  color: #BBB;
+  display: block;
+  text-align: right;
+  margin-bottom: 5px;
+}
 
 .number-works {
   font-size: 12px !important;
