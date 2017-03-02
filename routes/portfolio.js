@@ -18,5 +18,11 @@ router.get("/students/:username/portfolio/new", middleware.isLoggedIn, portfolio
 // CREATE ROUTE
 router.post("/students/:username/portfolio", middleware.isLoggedIn, upload.single('profilepic'), portfolioController.createPortfolio);
 
+// NEW WORK ROUTE
+router.get("/students/:username/portfolio/addWork", middleware.isLoggedIn, portfolioController.getNewWorkFrom);
+
+// CREATE WORK ROUTE
+router.post("/students/:username/portfolio/addWork", middleware.isLoggedIn, portfolioController.createWork);
+
 module.exports = router;
 

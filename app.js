@@ -27,7 +27,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname + "/public"));
 app.use(flash());
 
-clearDB();
+// CLEAR DATABASE
+//clearDB();
 
 app.use(require("express-session")({
   secret: "Ana msh fahem eh da f3ln bs eshta",
