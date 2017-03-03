@@ -26,7 +26,7 @@ let app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname + "/public"));
-app.use(methodOverride('_method'));
+app.use(methodOverride("_method"));
 app.use(flash());
 
 // CLEAR DATABASE
@@ -40,6 +40,7 @@ app.use(require("express-session")({
 
 app.use(passport.initialize());
 app.use(passport.session());
+// STUDENT AUTHENTICATION
 passport.use(new localStrategy(Student.authenticate()));
 passport.serializeUser(Student.serializeUser());
 passport.deserializeUser(Student.deserializeUser());
@@ -47,6 +48,7 @@ passport.deserializeUser(Student.deserializeUser());
 // LOCALS
 app.use(function(req, res, next){
    res.locals.currentStudent = req.user;
+   res.locals.currentClient = req.user;
    res.locals.error = req.flash("error");
    res.locals.success = req.flash("success");
    next();
@@ -56,6 +58,7 @@ app.use(function(req, res, next){
 app.use(require("./routes/index"));
 app.use(require("./routes/students"));
 app.use(require("./routes/portfolio"));
+app.use(require("./routes/clients"));
 
 
 // SERVER LISTENING

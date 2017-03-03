@@ -8,22 +8,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">STUDEFOLIO</a>
+      <a class="navbar-brand" href="/">STUDEFOLIO<sub id="for-clients">clients</sub></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
+        <li><a href="/clients">Home</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <% if(!currentStudent) { %>
-          <li><a href="/clients">Become a Client</a></li>
-          <li><a href="/students/login">Login</a></li>
-          <li><a href="/students/register">Sign Up</a></li>
+        <% if(!currentClient) { %>
+          <li><a href="/">Not a Client?</a></li>
+          <li><a href="/clients/login">Login</a></li>
+          <li><a href="/clients/register">Sign Up</a></li>
         <% } else { %>
-          <li><a href="/students/<%= currentStudent.username %>"><%= currentStudent.username %></a></li>
+          <li><a href="/clients/<%= currentClient.username %>"><%= currentClient.username %></a></li>
           <li><a href="/logout">Logout</a></li>
         <% } %>
       </ul>
@@ -47,3 +47,11 @@
   <% } %>
 
 </div>
+
+<style>
+#for-clients {
+  font-weight: normal;
+  font-size: 12px;
+  color: #AAA;
+}
+</style>
