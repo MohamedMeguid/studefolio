@@ -1,5 +1,12 @@
 .content {
   position: relative;
-  top: 25vh;
+  top: 20vh;
   text-align: center;
+}
+
+#main-title {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
 }

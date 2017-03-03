@@ -1,12 +1,46 @@
 <% include ./partials/header %>
+    <link rel="stylesheet" href="/stylesheets/works.css">
 <% include ./partials/nav %>
 
-<div class="container">
-  <div class="row">
-    <ul class="list-group">  
-      <p><%= portfolios %></p>
+<div class="container main">
+    <ul class="list-group">
+      <% portfolios.forEach(function(portfolio){ %>
+        <li class="list-group-item single-work">
+            <div class="row">
+                <div class="col-sm-3">
+                    <% if(portfolio.image){ %>
+                        <img src="/uploads/<%= portfolio.image %>" alt="<%= portfolio.name %> profile picture" class="img-responsive img-rounded" />
+                    <% } else { %>
+                        <img src="/uploads/default.png %>" alt="default profile picture" class="img-responsive img-rounded" />
+                    <% } %>
+                </div>
+                <div class="col-sm-3">
+                    <h3><%= portfolio.name %></h3>
+                    <p>has <%= portfolio.works.length %> work(s)</p>
+                    <a class="btn btn-info btn-xs" href="#">View more</a>
+                </div>
+                <div class="col-sm-3">
+                    <% if(portfolio.works[0]){ %>
+                        <div class="well work-panel text-center">
+                            <a href="<%= portfolio.works[0].link %>" class="work-link">link</a>
+                            <hr/>
+                            <p><%= portfolio.works[0].details %></p>
+                        </div>
+                    <% } %>
+                </div>    
+                <div class="col-sm-3">
+                    <% if(portfolio.works[1]){ %>
+                        <div class="well work-panel text-center">
+                            <a href="<%= portfolio.works[1].link %>" class="work-link">link</a>
+                            <hr/>
+                            <p><%= portfolio.works[1].details %></p>
+                        </div>
+                    <% } %>
+                </div>  
+            </div>
+        </li>
+      <% }) %> 
     </ul>
-  </div>
 </div>
 
 <!-- PAGINATION -->

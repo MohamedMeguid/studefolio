@@ -1,0 +1,25 @@
+.main {
+  margin-top: 3em;
+  width: 50%;
+}
+
+.single-work {
+  min-width: 700px;
+  padding: 20px;
+}
+
+.work-panel {
+  padding: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 150px;
+}
+
+.work-link {
+  display: block;
+  margin-top: 10px;
+}
+
+li {
+  list-style-type: none;
+}

@@ -19,14 +19,14 @@
           <div class="container">
 
             <div class="row">
-              <div class="profile-pic col-lg-2">
+              <div class="profile-pic col-md-2">
               <% if(portfolio.image) { %>
-                <img src="/uploads/<%= portfolio.image %>" alt="<%= student.username %> profile picture" class="img-responsive img-thumbnail">
+                <img src="/uploads/<%= portfolio.image %>" alt="<%= student.username %> profile picture" class="img-responsive img-thumbnail" />
               <% } else { %>
-                <img src="/uploads/default.png" alt="<%= student.username %> profile picture" class="img-responsive img-thumbnail">
+                <img src="/uploads/default.png" alt="<%= student.username %> profile picture" class="img-responsive img-thumbnail" />
               <% } %>
               </div>
-              <div class="col-lg-10">
+              <div class="col-md-10">
                 <h2><%= portfolio.name %></h2>
                 <h5>@<%= student.username %></h5>
                 <% if(portfolio.works.length == 1) { %>
@@ -54,7 +54,7 @@
                   <a href="<%= work.link %>" class="text-center">
                     <%= work.link %>
                   </a>
-                  <hr>
+                  <hr/>
                   <p class="text-center desc">
                     <%= work.details %>
                   </p>

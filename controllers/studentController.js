@@ -25,7 +25,7 @@ let studentController = {
       }
       passport.authenticate("local")(req, res, function(){
         req.flash("success", "Welcome to Studefolio, " + student.username);
-        res.redirect("/");
+        res.redirect("/students/" + req.user.username);
       });
     });
   },
