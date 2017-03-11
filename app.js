@@ -63,7 +63,6 @@ app.use(require("./routes/clients"));
 
 
 // SERVER LISTENING
-app.listen(8080, function(){
-    console.log("Studefolio up and running! on port:8080");
-    console.log(process.env.DATABASEURL);
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("Studefolio up and running!");
 });
