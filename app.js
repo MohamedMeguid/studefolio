@@ -18,7 +18,8 @@ let clearDB = require("./clearDB");
 
 // CONNECT DATABASE
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/studefolio");
+let url = process.env.DATABASEURL || "mongodb://localhost:27017/studefolio";
+mongoose.connect(url);
 
 // CONFIGURE APP AND MIDDLEWARE
 let app = express();
@@ -64,4 +65,5 @@ app.use(require("./routes/clients"));
 // SERVER LISTENING
 app.listen(8080, function(){
     console.log("Studefolio up and running! on port:8080");
+    console.log(process.env.DATABASEURL);
 });
