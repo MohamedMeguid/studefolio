@@ -49,7 +49,6 @@ passport.deserializeUser(Student.deserializeUser());
 // LOCALS
 app.use(function(req, res, next){
    res.locals.currentStudent = req.user;
-   res.locals.currentClient = req.user;
    res.locals.error = req.flash("error");
    res.locals.success = req.flash("success");
    next();
@@ -63,6 +62,6 @@ app.use(require("./routes/clients"));
 
 
 // SERVER LISTENING
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(8080, function(){
     console.log("Studefolio up and running!");
 });

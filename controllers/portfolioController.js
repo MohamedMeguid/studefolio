@@ -26,7 +26,15 @@ let portfolioController = {
                         console.log(err.message);
                     } else {
                         if(req.file){
-                            portfolio.update({image: req.file.filename});
+                            portfolio.update({image: req.file.filename}, function(err){
+                                if(err){
+                                    console.log(err);
+                                } else {
+                                    console.log("uploaded image to portfolio");
+                                    console.log(portfolio.name);
+                                    console.log(portfolio.image);
+                                }
+                            });
                         }
                         portfolio.works.push(work);
                         portfolio.save();
